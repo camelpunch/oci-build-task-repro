@@ -1,0 +1,17 @@
+---
+platform: linux
+image_resource:
+  type: registry-image
+  source:
+    repository: vito/oci-build-task
+    tag: "0.1.0"
+inputs:
+- name: dist
+outputs:
+- name: image
+run:
+  path: build
+caches:
+- path: cache
+params:
+  CONTEXT: dist
