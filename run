@@ -1,5 +1,5 @@
 fly --target ci \
     execute \
     --privileged \
-    --config ./build-image.yaml \
+    --config "$(dirname $0)/build-image.yaml" \
     --input dist="$(dirname $0)"
